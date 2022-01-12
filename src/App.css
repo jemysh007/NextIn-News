@@ -1,0 +1,92 @@
+#header .list-group-item {
+  border-top: none !important;
+  border-bottom: none !important;
+  padding: 5px !important;
+}
+
+#header .list-group-item svg {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+.header-tsmall {
+  font-size: smaller !important;
+}
+
+.header2 .nav-item {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+.nav-link {
+  color: black !important;
+}
+.header2 .nav-link {
+  font-weight: bolder !important;
+}
+
+.user-msg img {
+  border-radius: 15px;
+}
+
+.user-msg .username {
+  font-size: 14px;
+  color: #000000b8;
+}
+.thumb-title {
+  padding: 14px 24px;
+  background: #160c0c9e;
+  font-size: 12px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  color: #ffffff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.footer .list-group-item {
+  background: transparent;
+  border: none;
+  color: #000;
+  font-weight: bold;
+}
+
+img:hover {
+  transform: scale(1.25);
+  transition: transform 0.4s;
+}
+
+img {
+  transition: transform 0.4s;
+}
+.img-hover {
+  overflow: hidden;
+}
+
+.most-recent-news-image {
+  height: 350px;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  background: #000000a6;
+}
+
+.list-group-item {
+  border: none !important;
+}
+
+header .container {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white !important;
+  z-index: 9999;
+}
+
+.most-recent {
+  padding-top: 60px;
+}
