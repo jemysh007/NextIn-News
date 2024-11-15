@@ -13,7 +13,7 @@ export default class RecentNewsHeader extends Component {
   componentDidMount() {
     axios
       .get(
-        `https://newsapi.org/v2/top-headlines?category=general&country=in&apiKey=${process.env.REACT_APP_NEWSAPI}`
+        `https://newsapi.org/v2/top-headlines?category=general&country=us&apiKey=${process.env.REACT_APP_NEWSAPI}`
       )
       .then((res) => {
         // console.log(res.data);

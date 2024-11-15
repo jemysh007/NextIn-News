@@ -48,7 +48,7 @@ export default class MostRecentNews extends Component {
     let category = this.state.category ? this.state.category : "general";
     axios
       .get(
-        `https://newsapi.org/v2/top-headlines?category=${category}&country=in&apiKey=${process.env.REACT_APP_NEWSAPI}`
+        `https://newsapi.org/v2/top-headlines?category=${category}&country=us&apiKey=${process.env.REACT_APP_NEWSAPI}`
       )
       .then((res) => {
         // console.log(res.data);
