@@ -33,7 +33,7 @@ export default function Header() {
     var minutes = date.getMinutes();
     var ampm = hours >= 12 ? "PM" : "AM";
     var todate = date.getDate();
-    var tomonth = date.getMonth() + 1;
+    var tomonth = date.getMonth();
     var toyear = date.getFullYear();
     var week = date.getDay();
     hours = hours % 12;
