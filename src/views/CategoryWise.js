@@ -1,9 +1,6 @@
 import React from "react";
 import CommanNews from "../components/CommanNews";
-import EditorsChoice from "../components/EditorsChoice";
 import MostRecentNews from "../components/MostRecentNews";
-import PopularNews from "../components/PopularNews";
-import WorldNews from "../components/WorldNews";
 import MainLayout from "./MainLayout";
 
 export default function CategoryWise(props) {

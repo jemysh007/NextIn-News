@@ -69,7 +69,7 @@ export default class MostRecentNews extends Component {
                 {this.state.articles.slice(0, 5).map((element, index) => {
                   return (
                     <Carousel.Item key={index}>
-                      <a target="_blank" href={element.url}>
+                      <a target="_blank" rel="noreferrer" href={element.url}>
                         <Image
                           style={this.bannerImageStyle}
                           className="d-block w-100 most-recent-news-image"
