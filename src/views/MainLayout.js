@@ -1,14 +1,15 @@
-import React, { Component } from "react";
-import { Container } from "react-bootstrap";
+import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 export default function MainLayout(props) {
   return (
-    <Container>
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
       <Header />
-      {props.children}
+      <main className="pt-4">
+        {props.children}
+      </main>
       <Footer />
-    </Container>
+    </div>
   );
 }

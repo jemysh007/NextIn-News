@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ThemeProvider } from "./contexts/ThemeContext";
 
 import Home from "./views/Home";
 import CategoryWise from "./views/CategoryWise";
@@ -14,10 +14,11 @@ export default function App() {
   };
 
   return (
-    <BrowserRouter>
-      <LoadingBar
-        color="#000"
-        progress={progress}
+    <ThemeProvider>
+      <BrowserRouter>
+        <LoadingBar
+          color="#d4af37"
+          progress={progress}
         // onLoaderFinished={() => setProgress(0)}
       />
       <Routes>
@@ -64,5 +65,6 @@ export default function App() {
         />
       </Routes>
     </BrowserRouter>
+    </ThemeProvider>
   );
 }
