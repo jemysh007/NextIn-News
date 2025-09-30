@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import NewsCard from "./NewsCard";
 
 export default class WorldNews extends Component {

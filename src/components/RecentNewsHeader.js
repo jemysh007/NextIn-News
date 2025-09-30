@@ -33,6 +33,7 @@ export default class RecentNewsHeader extends Component {
                   className="text-dark text-decoration-none"
                   href={element.url}
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <Row>
                     <Col md={4}>

@@ -63,7 +63,7 @@ export default function NewsCard(props) {
         </Card.Text>
         <Row>
           <Col md={6}>
-            <a className="btn btn-dark" target="_blank" href={url}>
+            <a className="btn btn-dark" target="_blank" rel="noreferrer" href={url}>
               Read Article
             </a>
           </Col>

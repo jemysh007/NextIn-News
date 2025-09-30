@@ -1,41 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import NewsCard from "./NewsCard";
 import axios from "axios";
 
 export default function CommanNews(props) {
-  // this.state = {
-  //   articles: [],
-  //   category: this.props.category,
-  //   title: this.props.title,
-  //   limit: this.props.limit,
-  // };
-
   const [articles, setArticles] = useState([]);
-  const [title, setTitle] = useState(props.title);
-  const [limit, setLimit] = useState(props.limit);
-  const [category, setCategory] = useState(
-    props.category && props.category != "" ? props.category : "general"
-  );
+  const { title, limit, category: propCategory, setProgress } = props;
+  const category = propCategory && propCategory !== "" ? propCategory : "general";
 
-  const updateNews = () => {
-    props.setProgress(15);
+  const updateNews = useCallback(() => {
+    setProgress(15);
     axios
       .get(
         `https://newsapi.org/v2/top-headlines?category=${category}&country=us&apiKey=${process.env.REACT_APP_NEWSAPI}`
       )
       .then((res) => {
-        // console.log(res.data);
-        props.setProgress(80);
+        setProgress(80);
         setArticles(res.data.articles.slice(0, limit ? limit : 150));
-        props.setProgress(100);
+        setProgress(100);
       })
-      .catch((error) => {});
-  };
+      .catch((error) => {
+        console.error("Error fetching news:", error);
+        setProgress(100);
+      });
+  }, [category, limit, setProgress]);
 
   useEffect(() => {
     updateNews();
-  }, []);
+  }, [updateNews]);
+  
   return (
     <div>
       <Container className="mt-5">
