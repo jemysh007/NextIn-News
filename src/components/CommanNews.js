@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { Col, Container, Row } from "react-bootstrap";
 import NewsCard from "./NewsCard";
 import axios from "axios";
 
@@ -30,23 +29,35 @@ export default function CommanNews(props) {
   }, [updateNews]);
   
   return (
-    <div>
-      <Container className="mt-5">
-        <Row>
-          <Col>
-            <h4 className="text-success">{title}</h4>
-          </Col>
-        </Row>
-        <Row>
-          {articles.map((element, index) => {
-            return (
-              <Col className="my-3" key={index} md={4}>
-                <NewsCard data={element} />
-              </Col>
-            );
-          })}
-        </Row>
-      </Container>
-    </div>
+    <section className="py-12 bg-white dark:bg-gray-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="newspaper-headline text-news-primary dark:text-white mb-4 border-b-4 border-news-accent dark:border-yellow-400 pb-2 inline-block">
+            {title}
+          </h2>
+          <div className="w-24 h-1 bg-news-accent dark:bg-yellow-400 mx-auto mt-4"></div>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {articles.map((article, index) => (
+            <div key={index} className="flex">
+              <NewsCard data={article} />
+            </div>
+          ))}
+        </div>
+        
+        {articles.length === 0 && (
+          <div className="text-center py-12">
+            <div className="animate-pulse">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {[...Array(6)].map((_, index) => (
+                  <div key={index} className="bg-gray-200 dark:bg-gray-700 rounded-lg h-96"></div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
   );
 }
